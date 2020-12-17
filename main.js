@@ -9,9 +9,9 @@ function createPlot() {
   for (let i = 0; i < count; i++) {
     var scale = Math.min(canvas.width, canvas.height) / 2;
     var interval = Math.PI * 2 / count;
-    var desiredRadianAngleOnCircle = interval * i;
+    var dpr = interval * i;
 
-    var position = circle([], scale * 0.5, desiredRadianAngleOnCircle);
+    var position = circle([], scale * 0.5, dpr);
     position[0] += canvas.width / 2;
     position[1] += canvas.height / 2;
 
@@ -21,10 +21,10 @@ function createPlot() {
 }
 
 // create point for circle
-function circle(out, scale, dpi) {
+function circle(out, scale, dpr) {
   // used to randomize dots in a circle shape
   //var r = Math.random() * Math.PI * 2.0;
-  var r = dpi;
+  var r = dpr;
   out[0] = Math.cos(r) * scale;
   out[1] = Math.sin(r) * scale;
   return out;
