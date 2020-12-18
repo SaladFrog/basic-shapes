@@ -14,8 +14,8 @@ function createPlot() {
     var position = circle([], scale * 0.5, dpr);
     
     // or skip circle fn
-    // x = Math.cos(r) * scale;
-    // y = Math.sin(r) * scale;
+    // x = Math.cos(dpr) * scale;
+    // y = Math.sin(dpr) * scale;
     // x += canvas.width / 2;
     // y += canvas.height / 2;
     
