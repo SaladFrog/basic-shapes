@@ -12,6 +12,13 @@ function createPlot() {
     var dpr = interval * i;
 
     var position = circle([], scale * 0.5, dpr);
+    
+    // or skip circle fn
+    // x = Math.cos(r) * scale;
+    // y = Math.sin(r) * scale;
+    // x += canvas.width / 2;
+    // y += canvas.height / 2;
+    
     position[0] += canvas.width / 2;
     position[1] += canvas.height / 2;
 
