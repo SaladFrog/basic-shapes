@@ -27,8 +27,8 @@ function hexagon(out, scale, dpr) {
 
 // fetch the created array
 const particles = createPlot();
-console.log(particles);
 
+// background
 context.rect(0, 0, canvas.width, canvas.height);
 context.fill();
 
