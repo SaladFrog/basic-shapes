@@ -7,7 +7,7 @@ const ctx = canvas.getContext('2d');
 
 var height = 400;
 var width = 400;
-var angle = Math.PI / 4;
+var angle = Math.PI / 4; //change angle to make different trees
 
 function draw() {
   ctx.translate(200, height);
