@@ -1,16 +1,20 @@
 /**
 * polygon([], radius, sides, angle);
 *
-polygon: function (out, radius, sides = 3, angle = 0) {
-	for(let i = 0; i < sides; i++) {
-	var a = angle + Math.PI * 2.0 * (i / sides);
-	out[0] = Math.cos(a) * radius;
-	out[1] = Math.sin(a) * radius;
-	}
-	return out;
-}
+* polygon(canvas.width / 2, canvas.height / 2, 40, 6, Math.PI / 2);
 */
-
+function polygon(x, y, radius, sides, angle) {
+  context.beginPath();
+  for (let i = 0; i < sides; i++) {
+    const a = angle + Math.PI * 2.0 * (i / sides);
+    let sx = x + Math.cos(a) * radius;
+    let sy = y + Math.sin(a) * radius;
+    context.lineTo(sx, sy);
+    context.lineTo(sx, sy);
+  }
+  context.closePath();
+}
+/*
 // dot to create polygon
 polygon: function (out, radius, sides) {
 	for(let i = 0; i < sides; i++) {
@@ -21,7 +25,7 @@ polygon: function (out, radius, sides) {
 	}
 	return out;
 }
-
+*/
 // random dot on circle
 onCircle: function (out, radius) {
 	var a = Math.random() * 2.0 * Math.PI;
