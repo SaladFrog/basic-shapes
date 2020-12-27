@@ -35,8 +35,8 @@ insideCircle: function (out, radius) {
 
 // Phyllotaxis
 /**
-* @param n: number of the dot
-* @param c: scale pattern
+* @param dot: index of the dot
+* @param scale: scale pattern
 */
 phyllotaxis: function (out, dot, scale) {
 	var angle = dot * 137.5;
