@@ -1,14 +1,7 @@
 /**
-* @param out: []
-* @param radius: int
+* polygon([], radius, sides, angle);
 *
-* onCircle([], 100);
-*/
-
-/**
-* onCircleInt([], radius, sides, angle);
-*
-onCircleInt: function (out, radius, sides = 3, angle = 0) {
+polygon: function (out, radius, sides = 3, angle = 0) {
 	for(let i = 0; i < sides; i++) {
 	var a = angle + Math.PI * 2.0 * (i / sides);
 	out[0] = Math.cos(a) * radius;
@@ -18,11 +11,8 @@ onCircleInt: function (out, radius, sides = 3, angle = 0) {
 }
 */
 
-/**
-* onCircleInt([], radius, sides);
-*/
-// dot on circle
-onCircleInt: function (out, radius, sides) {
+// dot to create polygon
+polygon: function (out, radius, sides) {
 	for(let i = 0; i < sides; i++) {
 	var a = Math.PI * 2.0 / sides;
 	var r = a * i;
@@ -49,17 +39,16 @@ insideCircle: function (out, radius) {
 	return out;
 }; 
 
-// Phyllotaxis
 /**
 * @param out: []
 * @param dot: index of the dot
-* @param scale: scale pattern
+* @param scale: scale/radius pattern
 * http://algorithmicbotany.org/papers/abop/abop-ch4.pdf
 */
-phyllotaxis: function (out, dot, scale) {
+phyllotaxis: function (out, dot, radius) {
 	//var angle = dot * 137.5; // angle in radius
 	var a = dot * (137.5 * Math.PI / 180); // angle in degrees
-	var r = scale * Math.sqrt(dot);
+	var r = radius * Math.sqrt(dot);
 	out[0] = Math.cos(a) * r;
 	out[1] = Math.sin(a) * r;
 	return out;
