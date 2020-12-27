@@ -35,6 +35,7 @@ insideCircle: function (out, radius) {
 
 // Phyllotaxis
 /**
+* @param out: []
 * @param dot: index of the dot
 * @param scale: scale pattern
 * http://algorithmicbotany.org/papers/abop/abop-ch4.pdf
