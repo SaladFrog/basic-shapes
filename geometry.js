@@ -7,7 +7,7 @@
 
 // dot on circle
 onCircleInt: function (out, radius, sides) {
-	for(let i = 0; i < sides; i++;) {
+	for(let i = 0; i < sides; i++) {
 	var angle = Math.PI * 2.0 / sides;
 	var r = angle * i;
 	out[0] = Math.cos(r) * radius;
@@ -41,7 +41,8 @@ insideCircle: function (out, radius) {
 * http://algorithmicbotany.org/papers/abop/abop-ch4.pdf
 */
 phyllotaxis: function (out, dot, scale) {
-	var angle = dot * 137.5;
+	//var angle = dot * 137.5; // angle in radius
+	var angle = dot * (137.5 * Math.PI / 180); // angle in degrees
 	var r = scale * Math.sqrt(dot);
 	out[0] = r * Math.cos(angle);
 	out[1] = r * Math.sin(angle);
