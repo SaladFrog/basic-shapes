@@ -37,6 +37,7 @@ insideCircle: function (out, radius) {
 /**
 * @param dot: index of the dot
 * @param scale: scale pattern
+* http://algorithmicbotany.org/papers/abop/abop-ch4.pdf
 */
 phyllotaxis: function (out, dot, scale) {
 	var angle = dot * 137.5;
