@@ -32,3 +32,17 @@ insideCircle: function (out, radius) {
 	out[1] = Math.sin(angle) * r;
 	return out;
 }; 
+
+// Phyllotaxis
+/**
+* @param n: number of the dot
+* @param c: scale pattern
+*/
+phyllotaxis: function (out, dot, scale) {
+	var angle = dot * 137.5;
+	var r = scale * Math.sqrt(dot);
+	out[0] = r * Math.cos(angle);
+	out[1] = r * Math.sin(angle);
+	return out;
+}
+
