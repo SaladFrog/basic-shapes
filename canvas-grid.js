@@ -17,6 +17,13 @@ points.forEach(([u, v]) => {
   ctx.fill();
 });
 
+// test shape
+ctx.beginPath();
+ctx.arc(canvas.width / 2, canvas.height / 2, 40, 0, Math.PI * 2);
+ctx.globalAlpha = 0.5;
+ctx.strokeStyle = 'red';
+ctx.stroke();
+
 function createGrid() {
 const points = [];
   for (let x = 0; x < columns; x++) {
