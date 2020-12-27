@@ -4,8 +4,8 @@ canvas.width = 400;
 canvas.height = 400;
 
 const size = 20;
-const columns = Math.floor(canvas.width / size) + 1;
-const rows = Math.floor(canvas.height / size) + 1;
+const columns = Math.floor(canvas.width / size);
+const rows = Math.floor(canvas.height / size);
 const points = createGrid();
 
 points.forEach(([u, v]) => {
