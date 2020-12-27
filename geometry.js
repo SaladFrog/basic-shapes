@@ -13,4 +13,4 @@ insideCircle: function (out, radius) {
 	out[0] = Math.cos(theta) * r;
 	out[1] = Math.sin(theta) * r;
 	return out;
-};
+}; 
