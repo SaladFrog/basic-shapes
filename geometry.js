@@ -5,11 +5,27 @@
 * onCircle([], 100);
 */
 
+/**
+* onCircleInt([], radius, sides, angle);
+*
+onCircleInt: function (out, radius, sides = 3, angle = 0) {
+	for(let i = 0; i < sides; i++) {
+	var a = angle + Math.PI * 2.0 * (i / sides);
+	out[0] = Math.cos(a) * radius;
+	out[1] = Math.sin(a) * radius;
+	}
+	return out;
+}
+*/
+
+/**
+* onCircleInt([], radius, sides);
+*/
 // dot on circle
 onCircleInt: function (out, radius, sides) {
 	for(let i = 0; i < sides; i++) {
-	var angle = Math.PI * 2.0 / sides;
-	var r = angle * i;
+	var a = Math.PI * 2.0 / sides;
+	var r = a * i;
 	out[0] = Math.cos(r) * radius;
 	out[1] = Math.sin(r) * radius;
 	}
@@ -18,18 +34,18 @@ onCircleInt: function (out, radius, sides) {
 
 // random dot on circle
 onCircle: function (out, radius) {
-	var angle = Math.random() * 2.0 * Math.PI;
-	out[0] = Math.cos(angle) * radius;
-	out[1] = Math.sin(angle) * radius;
+	var a = Math.random() * 2.0 * Math.PI;
+	out[0] = Math.cos(a) * radius;
+	out[1] = Math.sin(a) * radius;
 	return out;
 };
 
 // random dot in circle
 insideCircle: function (out, radius) {
-	var angle = Math.random() * 2.0 * Math.PI;
+	var a = Math.random() * 2.0 * Math.PI;
 	var r = radius * Math.sqrt(Math.random());
-	out[0] = Math.cos(angle) * r;
-	out[1] = Math.sin(angle) * r;
+	out[0] = Math.cos(a) * r;
+	out[1] = Math.sin(a) * r;
 	return out;
 }; 
 
@@ -42,10 +58,10 @@ insideCircle: function (out, radius) {
 */
 phyllotaxis: function (out, dot, scale) {
 	//var angle = dot * 137.5; // angle in radius
-	var angle = dot * (137.5 * Math.PI / 180); // angle in degrees
+	var a = dot * (137.5 * Math.PI / 180); // angle in degrees
 	var r = scale * Math.sqrt(dot);
-	out[0] = r * Math.cos(angle);
-	out[1] = r * Math.sin(angle);
+	out[0] = Math.cos(a) * r;
+	out[1] = Math.sin(a) * r;
 	return out;
 }
 
