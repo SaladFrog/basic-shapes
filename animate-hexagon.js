@@ -3,14 +3,17 @@ const context = canvas.getContext('2d');
 let width = canvas.width = 400;
 let height = canvas.height = 400;
 
-function lerp(start, end, amt) {
-  return (1 - amt) * start + amt * end
+function setup() {
+  context.fillStyle = 'black';
+  context.fillRect(0, 0, width, height);
+  draw();
+  window.requestAnimationFrame(setup);
 }
 
 function draw(dt) {
   const dim = Math.min(width, height);
   context.strokeStyle = 'white';
-  const time = new Date().getTime() / 1000;;
+  const time = new Date().getTime() / 1000;
 
   const rings = 10;
   const sides = 6;
@@ -41,11 +44,8 @@ function polygon(x, y, radius, sides = 3, angle = 0) {
   context.stroke();
 }
 
-function setup() {
-  context.fillStyle = 'black';
-  context.fillRect(0,0,width, height);
-  draw();
-  window.requestAnimationFrame(setup);
+function lerp(start, end, amt) {
+  return (1 - amt) * start + amt * end
 }
 
 setup();
