@@ -5,7 +5,7 @@ let height = canvas.height = 400;
 let angle = 0;
 
 function setup() {
-	angle += 0.01;
+  angle += 0.01;
   clear();
   draw();
   window.requestAnimationFrame(setup);
@@ -19,10 +19,9 @@ function clear() {
 function draw(dt) {
   const dim = Math.min(width, height);
   const time = new Date().getTime() / 1000;
-
   const rings = 10;
   const sides = 6;
-  const maxRadius = dim * 0.4;
+  const maxRadius = dim * 0.75;
   
   context.strokeStyle = 'white';
 
@@ -36,7 +35,7 @@ function draw(dt) {
     context.lineWidth = thickness;
     
     context.save();
-  	context.translate(width/2, height/2);
+    context.translate(width/2, height/2);
     context.rotate(angle);
     polygon(0, 0, radius, sides, Math.PI /2);
     context.restore();
