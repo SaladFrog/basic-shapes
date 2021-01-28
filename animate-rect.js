@@ -4,11 +4,16 @@ const sketch = () => {
   let width = canvas.width = 400;
   let height = canvas.height = 400;
   let angle = 0;
+  let dir = Math.random() > 0.5 ? -1 : 1
+  let yOff = 0;
+  let loop = true;
 
   function start() {
     clear();
     draw();
-    window.requestAnimationFrame(start);
+    if(loop) {
+      window.requestAnimationFrame(start);
+    }  
   }
 
   function clear() {
@@ -17,17 +22,23 @@ const sketch = () => {
   }
 
   function draw(dt) {
-    angle += 1;
+    angle += dir * 4;
+    yOff += 2;
+
+    let sx = width / 2;
+    let sy = height / 2 + yOff;
+
     context.fillStyle = 'white';
+      
     context.save();
-    context.translate(width / 2, height / 2);
+    context.translate(sx, sy);
     context.rotate(angle * Math.PI / 180);
     context.fillRect(-20, -20, 40, 40)
     context.restore();
-  }
 
-  function lerp(start, end, amt) {
-    return (1 - amt) * start + amt * end
+    if (sy > height) {
+      loop = false;
+    }    
   }
 
   return {
