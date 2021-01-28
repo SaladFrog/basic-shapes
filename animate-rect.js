@@ -19,7 +19,7 @@ function clear() {
 }
 
 function draw(dt) {
-angle += 1;
+  angle += 1;
   context.fillStyle = 'white';
   context.save();
   context.translate(width/2, height/2);
