@@ -4,20 +4,25 @@ let width = canvas.width = 400;
 let height = canvas.height = 400;
 
 function setup() {
-  context.fillStyle = 'black';
-  context.fillRect(0, 0, width, height);
+  clear();
   draw();
   window.requestAnimationFrame(setup);
 }
 
+function clear() {
+  context.fillStyle = 'black';
+  context.fillRect(0, 0, width, height);
+}
+
 function draw(dt) {
   const dim = Math.min(width, height);
-  context.strokeStyle = 'white';
   const time = new Date().getTime() / 1000;
 
   const rings = 10;
   const sides = 6;
   const maxRadius = dim * 0.4;
+  
+  context.strokeStyle = 'white';
 
   for (let j = 0; j < rings; j++) {
     const t = (j + 1) / rings;
