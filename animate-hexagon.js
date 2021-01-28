@@ -2,8 +2,10 @@ const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 let width = canvas.width = 400;
 let height = canvas.height = 400;
+let angle = 0;
 
 function setup() {
+	angle += 0.01;
   clear();
   draw();
   window.requestAnimationFrame(setup);
@@ -32,7 +34,12 @@ function draw(dt) {
     const pingPong = Math.sin(t * 3.0 + time) * 0.5 + 0.5;
     const thickness = lerp(minThickness, maxThickness, pingPong);
     context.lineWidth = thickness;
-    polygon(width/2, height/2, radius, sides, Math.PI /2);
+    
+    context.save();
+  	context.translate(width/2, height/2);
+    context.rotate(angle);
+    polygon(0, 0, radius, sides, Math.PI /2);
+    context.restore();
   }
 }
 
