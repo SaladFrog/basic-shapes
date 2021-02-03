@@ -47,3 +47,13 @@ particles.forEach(p => {
   context.stroke();
 })
 
+/*
+for (let j = 0; j < 1; j++) {
+  particles.forEach(p => {
+    context.beginPath();
+    context.arc(p[0], p[1], scale, 0, Math.PI * 2);
+    context.stroke();
+  })
+  scale += 0.2;
+}
+*/
